@@ -1,0 +1,60 @@
+{
+    "job": {
+        "setting": {
+            "speed": {
+                "channel": 1
+            }
+        },
+        "content": [
+            {
+                 "reader": {
+                    "name": "mysqlreader",
+                    "parameter": {
+                        "username": "xunibiAPP",
+                        "password": "xunibiAPP2018",
+                        "connection": [
+                            {
+                                "querySql": [
+                                    "SELECT * FROM xunibiAPP.news;"
+                                ],
+                                "jdbcUrl": [
+                                    "jdbc:mysql://192.168.200.201:3306/xunibiAPP"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "writer": {
+                    "name": "mysqlwriter",
+                    "parameter": {
+                        "writeMode": "insert",
+                        "username": "xunibiAPP",
+                        "password": "xunibiAPP2018",
+                        "column": [
+				"id",
+  				"update_time",
+  				"content",
+  				"news_resource",
+  				"news_time",
+  				"subject"			
+			],
+                        "session": [
+                        	"set session sql_mode='ANSI'"
+                        ],
+                        "preSql": [
+                            "delete from news_tmp"
+                        ],
+                        "connection": [
+                            {
+                                "jdbcUrl": "jdbc:mysql://192.168.200.201:3306/xunibiAPP?useUnicode=true&characterEncoding=gbk",
+                                "table": [
+                                    "news_tmp"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}
