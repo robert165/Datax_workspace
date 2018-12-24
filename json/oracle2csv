@@ -24,7 +24,7 @@
                     "name":"txtfilewriter",
                     "parameter":{
                         "path":"/workspace/csv",
-                        "fileName":"a0001_DATA_MF_360_AREA_ANALYSIS_oracle2csv",
+                        "fileName":"DATA_MF_360_AREA_ANALYSIS_20181224_020602",
                         "writeMode":"truncate",
 			"fileFormat":"csv",
                         "dateFormat":"yyyy-MM-dd"
