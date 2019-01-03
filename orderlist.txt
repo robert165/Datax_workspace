@@ -1,9 +1,183 @@
-#echo '0'
-echo '1'
-echo '2'
-echo '3'
-echo '4'
-echo '5'
-echo '6'
-echo '7'
+##finished
+#python datax.py /workspace/json/oracleremote/DATA_MF_BLACK_LIST_HUIFA.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_BLACK_LIST_ORG_R.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_BLACK_LIST_FAHAI.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_BLACK_LIST_XINYAN.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_BLACK_LIST_YIMEI.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_RISKLIST_BAIDU.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_VERIFICATION_ORG_K.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_BLACK_LIST_FH_AJLC.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_BLACK_LIST_FH_BGT.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_BLACK_LIST_FH_CPWS.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_BLACK_LIST_FH_FYGG.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_BLACK_LIST_FH_KTGG.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_BLACK_LIST_FH_SXGG.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_BLACK_LIST_FH_ZXGG.json
+##finished
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_EMRG_ANLS.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_SPECIAL_CALL.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_TRIP_ANALYSIS.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_AGENTCE.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_AGENTCE_RISK_INFO.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_AGENTY_ANTI_FRAUD.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_AUTH_RECORD.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_OPR_CREDIT_CARD.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_R360_REPORT.json
+####python datax.py /workspace/json/oracleremote/DATA_MF_RULE_TASK.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_SERV_QUERY_RECORD.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_TJY_RECORD.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_TONGDUN.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_TONGDUN_RISKITEM.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_UMENG_SCORE.json
+##1finished
+#python datax.py /workspace/json/oracleremote/DATA_MF_EMAIL_REPORT_201712.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_EMAIL_REPORT_201801.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_EMAIL_REPORT_201802.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_EMAIL_REPORT_201803.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_EMAIL_REPORT_201804.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_EMAIL_REPORT_201805.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_EMAIL_REPORT_201806.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_EMAIL_REPORT_201807.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_EMAIL_REPORT_201808.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_EMAIL_REPORT_201809.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_EMAIL_REPORT_201810.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_EMAIL_REPORT_201811.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_EMAIL_REPORT_201812.json
+###2
+#python datax.py /workspace/json/oracleremote/DATA_MF_EMAIL_REPORT_DETL_201712.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_EMAIL_REPORT_DETL_201801.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_EMAIL_REPORT_DETL_201802.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_EMAIL_REPORT_DETL_201803.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_EMAIL_REPORT_DETL_201804.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_EMAIL_REPORT_DETL_201805.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_EMAIL_REPORT_DETL_201806.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_EMAIL_REPORT_DETL_201807.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_EMAIL_REPORT_DETL_201808.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_EMAIL_REPORT_DETL_201809.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_EMAIL_REPORT_DETL_201810.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_EMAIL_REPORT_DETL_201811.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_EMAIL_REPORT_DETL_201812.json
+###3
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_AREA_ANALYSIS_201712.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_AREA_ANALYSIS_201801.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_AREA_ANALYSIS_201802.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_AREA_ANALYSIS_201803.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_AREA_ANALYSIS_201804.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_AREA_ANALYSIS_201805.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_AREA_ANALYSIS_201806.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_AREA_ANALYSIS_201807.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_AREA_ANALYSIS_201808.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_AREA_ANALYSIS_201809.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_AREA_ANALYSIS_201810.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_AREA_ANALYSIS_201811.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_AREA_ANALYSIS_201812.json
+###4
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_CALLOG_MOUTHLY_201712.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_CALLOG_MOUTHLY_201801.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_CALLOG_MOUTHLY_201802.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_CALLOG_MOUTHLY_201803.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_CALLOG_MOUTHLY_201804.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_CALLOG_MOUTHLY_201805.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_CALLOG_MOUTHLY_201806.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_CALLOG_MOUTHLY_201807.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_CALLOG_MOUTHLY_201808.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_CALLOG_MOUTHLY_201809.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_CALLOG_MOUTHLY_201810.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_CALLOG_MOUTHLY_201811.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_CALLOG_MOUTHLY_201812.json
+###5
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_CALL_LOG_201712.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_CALL_LOG_201801.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_CALL_LOG_201802.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_CALL_LOG_201803.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_CALL_LOG_201804.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_CALL_LOG_201805.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_CALL_LOG_201806.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_CALL_LOG_201807.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_CALL_LOG_201808.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_CALL_LOG_201809.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_CALL_LOG_201810.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_CALL_LOG_201811.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_CALL_LOG_201812.json
+###6
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_SPCL_MONTHLY_201712.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_SPCL_MONTHLY_201801.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_SPCL_MONTHLY_201802.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_SPCL_MONTHLY_201803.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_SPCL_MONTHLY_201804.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_SPCL_MONTHLY_201805.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_SPCL_MONTHLY_201806.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_SPCL_MONTHLY_201807.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_SPCL_MONTHLY_201808.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_SPCL_MONTHLY_201809.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_SPCL_MONTHLY_201810.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_SPCL_MONTHLY_201811.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_360_SPCL_MONTHLY_201812.json
+###7
+#python datax.py /workspace/json/oracleremote/DATA_MF_TRIP_ANLS_MOUTHLY_201712.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_TRIP_ANLS_MOUTHLY_201801.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_TRIP_ANLS_MOUTHLY_201802.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_TRIP_ANLS_MOUTHLY_201803.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_TRIP_ANLS_MOUTHLY_201804.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_TRIP_ANLS_MOUTHLY_201805.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_TRIP_ANLS_MOUTHLY_201806.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_TRIP_ANLS_MOUTHLY_201807.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_TRIP_ANLS_MOUTHLY_201808.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_TRIP_ANLS_MOUTHLY_201809.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_TRIP_ANLS_MOUTHLY_201810.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_TRIP_ANLS_MOUTHLY_201811.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_TRIP_ANLS_MOUTHLY_201812.json
+###8
+#python datax.py /workspace/json/oracleremote/DATA_MF_SPCL_CALL_MOUTHLY_201712.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_SPCL_CALL_MOUTHLY_201801.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_SPCL_CALL_MOUTHLY_201802.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_SPCL_CALL_MOUTHLY_201803.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_SPCL_CALL_MOUTHLY_201804.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_SPCL_CALL_MOUTHLY_201805.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_SPCL_CALL_MOUTHLY_201806.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_SPCL_CALL_MOUTHLY_201807.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_SPCL_CALL_MOUTHLY_201808.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_SPCL_CALL_MOUTHLY_201809.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_SPCL_CALL_MOUTHLY_201810.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_SPCL_CALL_MOUTHLY_201811.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_SPCL_CALL_MOUTHLY_201812.json
+###9
+#python datax.py /workspace/json/oracleremote/DATA_MF_SPECIAL_SUBNUMBER_201712.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_SPECIAL_SUBNUMBER_201801.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_SPECIAL_SUBNUMBER_201802.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_SPECIAL_SUBNUMBER_201803.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_SPECIAL_SUBNUMBER_201804.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_SPECIAL_SUBNUMBER_201805.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_SPECIAL_SUBNUMBER_201806.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_SPECIAL_SUBNUMBER_201807.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_SPECIAL_SUBNUMBER_201808.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_SPECIAL_SUBNUMBER_201809.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_SPECIAL_SUBNUMBER_201810.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_SPECIAL_SUBNUMBER_201811.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_SPECIAL_SUBNUMBER_201812.json
+###10
+#python datax.py /workspace/json/oracleremote/DATA_MF_TONGDUN_RISKDETAIL_201712.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_TONGDUN_RISKDETAIL_201801.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_TONGDUN_RISKDETAIL_201802.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_TONGDUN_RISKDETAIL_201803.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_TONGDUN_RISKDETAIL_201804.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_TONGDUN_RISKDETAIL_201805.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_TONGDUN_RISKDETAIL_201806.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_TONGDUN_RISKDETAIL_201807.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_TONGDUN_RISKDETAIL_201808.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_TONGDUN_RISKDETAIL_201809.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_TONGDUN_RISKDETAIL_201810.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_TONGDUN_RISKDETAIL_201811.json
+#python datax.py /workspace/json/oracleremote/DATA_MF_TONGDUN_RISKDETAIL_201812.json
+###
+##python datax.py /workspace/json/oracleremote/DATA_MF_EMAIL_REPORT.json
+##python datax.py /workspace/json/oracleremote/DATA_MF_EMAIL_REPORT_DETL.json
+##python datax.py /workspace/json/oracleremote/DATA_MF_360_AREA_ANALYSIS.json
+##python datax.py /workspace/json/oracleremote/DATA_MF_360_CALLOG_MOUTHLY.json
+##python datax.py /workspace/json/oracleremote/DATA_MF_360_CALL_LOG.json
+##python datax.py /workspace/json/oracleremote/DATA_MF_360_SPCL_MONTHLY.json
+##python datax.py /workspace/json/oracleremote/DATA_MF_TRIP_ANLS_MOUTHLY.json
+##python datax.py /workspace/json/oracleremote/DATA_MF_SPCL_CALL_MOUTHLY.json
+##python datax.py /workspace/json/oracleremote/DATA_MF_SPECIAL_SUBNUMBER.json
+##python datax.py /workspace/json/oracleremote/DATA_MF_TONGDUN_RISKDETAIL.json
 

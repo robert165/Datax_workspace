@@ -1,0 +1,36 @@
+{
+    "job":{
+        "setting":{
+            "speed":{
+                "channel":1
+            }
+        },
+        "content":[
+            {
+                 "reader":{
+                    "name":"oraclereader",
+                    "parameter":{
+                        "username":"riskread",
+                        "password":"M8LED9MJR",
+                        "connection":[
+                            {
+                                "querySql":["SELECT * FROM RISK_MIC.DATA_MF_360_CALL_LOG WHERE CREATETIME >= to_date('2018/2/1', 'yyyy/mm/dd') AND CREATETIME <= to_date('2018/2/28', 'yyyy/mm/dd')"],
+                                "jdbcUrl":["jdbc:oracle:thin:@10.101.40.152:1521:pedg"]
+                            }
+                        ]
+                    }
+                },
+                "writer":{
+                    "name":"txtfilewriter",
+                    "parameter":{
+                        "path":"/workspace/csv",
+                        "fileName":"DATA_MF_360_CALL_LOG_201802",
+                        "writeMode":"truncate",
+			"fileFormat":"csv",
+                        "dateFormat":"yyyy-MM-dd"
+                    }
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,1421 @@
+-- MySQL dump 10.13  Distrib 5.7.20, for Linux (x86_64)
+--
+-- Host: 127.0.0.1    Database: xfdbmysql
+-- ------------------------------------------------------
+-- Server version	5.7.24-0ubuntu0.16.04.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `DATA_MF_360_AREA_ANALYSIS`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_360_AREA_ANALYSIS`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_360_AREA_ANALYSIS` (
+  `ID` decimal(8,0) NOT NULL,
+  `R360_ID` decimal(8,0) DEFAULT NULL COMMENT '融360ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `SEARCH_ID` varchar(50) DEFAULT NULL COMMENT '报告编号',
+  `AREA` varchar(20) DEFAULT NULL COMMENT '地区',
+  `CONTACT_PHONE_CNT` decimal(20,0) DEFAULT NULL COMMENT '联系号码数量',
+  `TALK_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '通话时长',
+  `TALK_CNT` decimal(8,0) DEFAULT NULL COMMENT '通话次数',
+  `CALL_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '主叫时长',
+  `CALL_CNT` decimal(8,0) DEFAULT NULL COMMENT '主叫次数',
+  `CALLED_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '被叫时长',
+  `CALLED_CNT` decimal(8,0) DEFAULT NULL COMMENT '被叫次数',
+  `MSG_CNT` decimal(8,0) DEFAULT NULL COMMENT '短信总数',
+  `SEND_CNT` decimal(8,0) DEFAULT NULL COMMENT '发送短信数',
+  `RECEIVE_CNT` decimal(8,0) DEFAULT NULL COMMENT '接收短信数',
+  `UNKNOWN_CNT` decimal(8,0) DEFAULT NULL COMMENT '未识别状态短信数',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_360_AREA_ANALYSIS_FKI` (`R360_ID`),
+  KEY `DATA_MF_360_AREA_ANALYSIS_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_360_CALLOG_MOUTHLY`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_360_CALLOG_MOUTHLY`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_360_CALLOG_MOUTHLY` (
+  `ID` decimal(8,0) NOT NULL,
+  `R360_ID` decimal(8,0) DEFAULT NULL COMMENT '融360ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `SEARCH_ID` varchar(50) DEFAULT NULL COMMENT '报告编号',
+  `OTHER_PHONE` varchar(200) DEFAULT NULL COMMENT '联系人号码',
+  `MONTH` varchar(10) DEFAULT NULL COMMENT '月份',
+  `TALK_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '通话时长',
+  `TALK_CNT` decimal(8,0) DEFAULT NULL COMMENT '通话次数',
+  `CALL_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '主叫时长',
+  `CALL_CNT` decimal(8,0) DEFAULT NULL COMMENT '主叫次数',
+  `CALLED_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '被叫时长',
+  `CALLED_CNT` decimal(8,0) DEFAULT NULL COMMENT '被叫次数',
+  `MSG_CNT` decimal(8,0) DEFAULT NULL COMMENT '短信总数',
+  `SEND_CNT` decimal(8,0) DEFAULT NULL COMMENT '短信总数',
+  `RECEIVE_CNT` decimal(8,0) DEFAULT NULL COMMENT '接收短信数',
+  `UNKNOWN_CNT` decimal(8,0) DEFAULT NULL COMMENT '未识别状态短信数',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_360_CALLOG_MOUTHLY_FKI` (`R360_ID`),
+  KEY `DATA_MF_360_CALLOG_MOUTHLY_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_360_CALL_LOG`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_360_CALL_LOG`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_360_CALL_LOG` (
+  `ID` decimal(8,0) NOT NULL,
+  `R360_ID` decimal(8,0) DEFAULT NULL COMMENT '融360ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `SEARCH_ID` varchar(50) DEFAULT NULL COMMENT '报告编号',
+  `OTHER_PHONE` varchar(100) DEFAULT NULL COMMENT '联系人号码',
+  `PHONE_LOCATION` varchar(100) DEFAULT NULL COMMENT '号码归属地',
+  `PHONE_INFO` varchar(100) DEFAULT NULL COMMENT '互联网标识',
+  `PHONE_LABEL` varchar(100) DEFAULT NULL COMMENT '类别标签',
+  `FIRST_CONTACT_DATE` varchar(100) DEFAULT NULL COMMENT '首次联系时间',
+  `LAST_CONTACT_DATE` varchar(100) DEFAULT NULL COMMENT '最后联系时间',
+  `TALK_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '通话时长',
+  `TALK_CNT` decimal(8,0) DEFAULT NULL COMMENT '通话次数',
+  `CALL_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '主叫时长',
+  `CALL_CNT` decimal(8,0) DEFAULT NULL COMMENT '主叫次数',
+  `CALLED_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '被叫时长',
+  `CALLED_CNT` decimal(8,0) DEFAULT NULL COMMENT '被叫次数',
+  `MSG_CNT` decimal(8,0) DEFAULT NULL COMMENT '短信总数',
+  `SEND_CNT` decimal(8,0) DEFAULT NULL COMMENT '发送短信数',
+  `RECEIVE_CNT` decimal(8,0) DEFAULT NULL COMMENT '接收短信数',
+  `UNKNOWN_CNT` decimal(8,0) DEFAULT NULL COMMENT '未识别状态短信数',
+  `CONTACT_1W` decimal(8,0) DEFAULT NULL COMMENT '近一周联系次数',
+  `CONTACT_1M` decimal(8,0) DEFAULT NULL COMMENT '近一个月联系次数',
+  `CONTACT_3M` decimal(8,0) DEFAULT NULL COMMENT '近三个月联系次数',
+  `CONTACT_EARLY_MORNING` decimal(8,0) DEFAULT NULL COMMENT '凌晨联系次数',
+  `CONTACT_MORNING` decimal(8,0) DEFAULT NULL COMMENT '早晨联系次数',
+  `CONTACT_NOON` decimal(8,0) DEFAULT NULL COMMENT '上午联系次数',
+  `CONTACT_AFTERNOON` decimal(8,0) DEFAULT NULL COMMENT '下午联系次数',
+  `CONTACT_EVEING` decimal(8,0) DEFAULT NULL COMMENT '夜晚联系次数',
+  `CONTACT_NIGHT` decimal(8,0) DEFAULT NULL COMMENT '深夜联系次数',
+  `CONTACT_WEEKDAY` decimal(8,0) DEFAULT NULL COMMENT '工作日联系次数',
+  `CONTACT_WEEKEND` decimal(8,0) DEFAULT NULL COMMENT '周末联系次数',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_360_CALL_LOG_FKI` (`R360_ID`),
+  KEY `DATA_MF_360_CALL_LOG_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_360_EMRG_ANLS`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_360_EMRG_ANLS`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_360_EMRG_ANLS` (
+  `ID` decimal(8,0) NOT NULL,
+  `R360_ID` decimal(8,0) DEFAULT NULL COMMENT '融360ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `SEARCH_ID` varchar(50) DEFAULT NULL COMMENT '报告编号',
+  `OTHER_PHONE` varchar(32) DEFAULT NULL COMMENT '联系人号码',
+  `NAME` varchar(64) DEFAULT NULL COMMENT '联系人姓名',
+  `FIRST_CONTACT_DATE` varchar(24) DEFAULT NULL COMMENT '首次联系时间',
+  `LAST_CONTACT_DATE` varchar(24) DEFAULT NULL COMMENT '最后联系时间',
+  `TALK_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '通话时长',
+  `TALK_CNT` decimal(8,0) DEFAULT NULL COMMENT '通话次数',
+  `CALL_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '主叫时长',
+  `CALL_CNT` decimal(8,0) DEFAULT NULL COMMENT '主叫次数',
+  `CALLED_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '被叫时长',
+  `CALLED_CNT` decimal(8,0) DEFAULT NULL COMMENT '被叫次数',
+  `MSG_CNT` decimal(8,0) DEFAULT NULL COMMENT '短信总数',
+  `SEND_CNT` decimal(8,0) DEFAULT NULL COMMENT '发送短信数',
+  `RECEIVE_CNT` decimal(8,0) DEFAULT NULL COMMENT '接收短信数',
+  `UNKNOWN_CNT` decimal(8,0) DEFAULT NULL COMMENT '未识别状态短信数',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_360_EMRG_ANLS_FKI` (`R360_ID`),
+  KEY `DATA_MF_360_EMRG_ANLS_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_360_MONTHLY_CONSUM`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_360_MONTHLY_CONSUM`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_360_MONTHLY_CONSUM` (
+  `ID` decimal(8,0) NOT NULL,
+  `R360_ID` decimal(8,0) DEFAULT NULL COMMENT '融360ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `SEARCH_ID` varchar(50) DEFAULT NULL COMMENT '报告编号',
+  `MONTH` varchar(10) DEFAULT NULL COMMENT '月份',
+  `TALK_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '通话时长',
+  `TALK_CNT` decimal(8,0) DEFAULT NULL COMMENT '通话次数',
+  `CALL_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '主叫时长',
+  `CALL_CNT` decimal(8,0) DEFAULT NULL COMMENT '主叫次数',
+  `CALLED_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '被叫时长',
+  `CALLED_CNT` decimal(8,0) DEFAULT NULL COMMENT '被叫次数',
+  `MSG_CNT` decimal(8,0) DEFAULT NULL COMMENT '短信总数',
+  `SEND_CNT` decimal(8,0) DEFAULT NULL COMMENT '发送短信数',
+  `RECEIVE_CNT` decimal(8,0) DEFAULT NULL COMMENT '接收短信数',
+  `UNKNOWN_CNT` decimal(8,0) DEFAULT NULL COMMENT '未识别状态短信数',
+  `CALL_CONSUMPTION` decimal(8,2) DEFAULT NULL COMMENT '消费金额',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_360_MONTHLY_CONSUM_FKI` (`R360_ID`),
+  KEY `DATA_MF_360_MONTHLY_CONSUM_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_360_SPCL_MONTHLY`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_360_SPCL_MONTHLY`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_360_SPCL_MONTHLY` (
+  `ID` decimal(8,0) NOT NULL,
+  `R360_ID` decimal(8,0) DEFAULT NULL COMMENT '融360ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `SEARCH_ID` varchar(50) DEFAULT NULL COMMENT '报告编号',
+  `CATE` varchar(10) DEFAULT NULL COMMENT '类别标签',
+  `MONTH` varchar(10) DEFAULT NULL COMMENT '月份',
+  `TALK_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '通话时长',
+  `TALK_CNT` decimal(8,0) DEFAULT NULL COMMENT '通话次数',
+  `CALL_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '主叫时长',
+  `CALL_CNT` decimal(8,0) DEFAULT NULL COMMENT '主叫次数',
+  `CALLED_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '被叫时长',
+  `CALLED_CNT` decimal(8,0) DEFAULT NULL COMMENT '被叫次数',
+  `MSG_CNT` decimal(8,0) DEFAULT NULL COMMENT '短信总数',
+  `SEND_CNT` decimal(8,0) DEFAULT NULL COMMENT '发送短信数',
+  `RECEIVE_CNT` decimal(8,0) DEFAULT NULL COMMENT '接收短信数',
+  `UNKNOWN_CNT` decimal(8,0) DEFAULT NULL COMMENT '未识别状态短信数',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_360_SPCL_MONTHLY_FKI` (`R360_ID`),
+  KEY `DATA_MF_360_SPCL_MONTHLY_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_360_SPECIAL_CALL`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_360_SPECIAL_CALL`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_360_SPECIAL_CALL` (
+  `ID` decimal(8,0) NOT NULL,
+  `R360_ID` decimal(8,0) DEFAULT NULL COMMENT '融360ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `SEARCH_ID` varchar(50) DEFAULT NULL COMMENT '报告编号',
+  `TALK_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '通话时长',
+  `TALK_CNT` decimal(8,0) DEFAULT NULL COMMENT '通话次数',
+  `CALL_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '主叫时长',
+  `CALL_CNT` decimal(8,0) DEFAULT NULL COMMENT '主叫次数',
+  `CALLED_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '被叫时长',
+  `CALLED_CNT` decimal(8,0) DEFAULT NULL COMMENT '被叫次数',
+  `MSG_CNT` decimal(8,0) DEFAULT NULL COMMENT '短信总数',
+  `SEND_CNT` decimal(8,0) DEFAULT NULL COMMENT '发送短信数',
+  `RECEIVE_CNT` decimal(8,0) DEFAULT NULL COMMENT '接收短信数',
+  `UNKNOWN_CNT` decimal(8,0) DEFAULT NULL COMMENT '未识别状态短信数',
+  `PHONE_LIST` varchar(4000) DEFAULT NULL COMMENT '号码详情(有问题)',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_360_SPECIAL_CALL_FKI` (`R360_ID`),
+  KEY `DATA_MF_360_SPECIAL_CALL_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_360_SPECIAL_CATE`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_360_SPECIAL_CATE`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_360_SPECIAL_CATE` (
+  `ID` decimal(8,0) NOT NULL,
+  `R360_ID` decimal(8,0) DEFAULT NULL COMMENT '融360ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `SEARCH_ID` varchar(50) DEFAULT NULL COMMENT '报告编号',
+  `CATE` varchar(10) DEFAULT NULL COMMENT '类别标签',
+  `TALK_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '通话时长',
+  `TALK_CNT` decimal(8,0) DEFAULT NULL COMMENT '通话次数',
+  `CALL_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '主叫时长',
+  `CALL_CNT` decimal(8,0) DEFAULT NULL COMMENT '主叫次数',
+  `CALLED_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '被叫时长',
+  `CALLED_CNT` decimal(8,0) DEFAULT NULL COMMENT '被叫次数',
+  `MSG_CNT` decimal(8,0) DEFAULT NULL COMMENT '短信总数',
+  `SEND_CNT` decimal(8,0) DEFAULT NULL COMMENT '发送短信数',
+  `RECEIVE_CNT` decimal(8,0) DEFAULT NULL COMMENT '接收短信数',
+  `UNKNOWN_CNT` decimal(8,0) DEFAULT NULL COMMENT '未识别状态短信数',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_360_SPECIAL_CATE_FKI` (`R360_ID`),
+  KEY `DATA_MF_360_SPECIAL_CATE_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_360_TRIP_ANALYSIS`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_360_TRIP_ANALYSIS`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_360_TRIP_ANALYSIS` (
+  `ID` decimal(8,0) NOT NULL,
+  `R360_ID` decimal(8,0) DEFAULT NULL COMMENT '融360ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `SEARCH_ID` varchar(50) DEFAULT NULL COMMENT '报告编号',
+  `LOCATION` varchar(50) DEFAULT NULL COMMENT '所在目的地',
+  `DATE_DISTRIBUTION` varchar(2000) DEFAULT NULL COMMENT '异地主叫月份',
+  `TALK_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '通话时长',
+  `TALK_CNT` decimal(8,0) DEFAULT NULL COMMENT '通话次数',
+  `CALL_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '主叫时长',
+  `CALL_CNT` decimal(8,0) DEFAULT NULL COMMENT '主叫次数',
+  `CALLED_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '被叫时长',
+  `CALLED_CNT` decimal(8,0) DEFAULT NULL COMMENT '被叫次数',
+  `MSG_CNT` decimal(8,0) DEFAULT NULL COMMENT '短信总数',
+  `SEND_CNT` decimal(8,0) DEFAULT NULL COMMENT '发送短信数',
+  `RECEIVE_CNT` decimal(8,0) DEFAULT NULL COMMENT '接收短信数',
+  `UNKNOWN_CNT` decimal(8,0) DEFAULT NULL COMMENT '未识别状态短信数',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_360_TRIP_ANALYSIS_FKI` (`R360_ID`),
+  KEY `DATA_MF_360_TRIP_ANALYSIS_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_AGENTCE`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_AGENTCE`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_AGENTCE` (
+  `ID` decimal(8,0) NOT NULL,
+  `FOUND` decimal(10,0) DEFAULT NULL COMMENT '表示该条记录能否查到 1：能查到 -1：查不到',
+  `ID_FOUND` decimal(10,0) DEFAULT NULL COMMENT '表示该条记录中的身份证能否查到 1：能查到 -1：查不到',
+  `RISK_SCORE` decimal(10,0) DEFAULT NULL COMMENT '0-100：欺诈分值；值越高欺诈可能性越大',
+  `SYSTEM_CODE` varchar(32) DEFAULT NULL COMMENT '系统码',
+  `SOURCE_ID` varchar(32) DEFAULT NULL COMMENT '资源码',
+  `CREATE_TIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATE_TIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_AGENTCE_RISK_INFO`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_AGENTCE_RISK_INFO`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_AGENTCE_RISK_INFO` (
+  `ID` decimal(8,0) NOT NULL,
+  `RISK_CODE` decimal(4,0) DEFAULT NULL COMMENT '风险码',
+  `RISK_CODE_VALUE` decimal(4,0) DEFAULT NULL COMMENT '风险码等级',
+  `SYSTEM_CODE` varchar(32) DEFAULT NULL COMMENT '系统码',
+  `SOURCE_ID` varchar(32) DEFAULT NULL COMMENT '资源码',
+  `CREATE_TIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATE_TIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_AGENTY_ANTI_FRAUD`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_AGENTY_ANTI_FRAUD`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_AGENTY_ANTI_FRAUD` (
+  `ID` decimal(8,0) NOT NULL COMMENT '主键',
+  `SCORE` decimal(8,0) DEFAULT NULL COMMENT '0-100:分值越高数据风险越高。风险度参考区间：0~35：低风险 36~79：中风险 80~100:高风险',
+  `TAG` varchar(64) DEFAULT NULL COMMENT '标签说明（80分以上返回tag）',
+  `SYSTEM_CODE` varchar(64) DEFAULT NULL COMMENT '系统码',
+  `SOURCE_ID` varchar(64) DEFAULT NULL COMMENT '查询码',
+  `CREATE_TIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATE_TIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='机构Y信用评分';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_AUTH_RECORD`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_AUTH_RECORD`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_AUTH_RECORD` (
+  `ID` decimal(8,0) NOT NULL COMMENT '主键',
+  `USER_ID` varchar(36) DEFAULT NULL COMMENT 'APP系统用户的ID',
+  `OUT_UNIQUE_ID` varchar(36) DEFAULT NULL COMMENT '商户唯一标识id',
+  `STATE` varchar(20) DEFAULT NULL COMMENT '状态（login, crawl, crawl_fail, report, report_fail）',
+  `ACCOUNT` varchar(20) DEFAULT NULL COMMENT '查询的帐户名',
+  `SEARCH_ID` varchar(50) DEFAULT NULL COMMENT '查询ID',
+  `ACCOUNT_TYPE` varchar(20) DEFAULT NULL COMMENT '抓取类型',
+  `ERROR_REASON_DETAIL` varchar(500) DEFAULT NULL COMMENT '只有在运营商在抓取失败的情况下会返回此字段',
+  `SYSTEM_CODE` varchar(50) DEFAULT NULL COMMENT '调用系统的系统码',
+  `PLATFORM_CODE` varchar(50) DEFAULT NULL COMMENT '第三方平台码',
+  `SERVICE_CODE` varchar(50) DEFAULT NULL COMMENT '服务码',
+  `AUTH_TYPE` varchar(50) DEFAULT NULL COMMENT '融360认证类型',
+  `ID_NUMBER` varchar(20) DEFAULT NULL COMMENT '身份证号码',
+  `REQUEST_VALUE` varchar(1000) DEFAULT NULL COMMENT '请求参数的JSON字符串',
+  `DB_STATUS` varchar(20) DEFAULT NULL COMMENT '入库状态（S:成功，F:失败）',
+  `ERROR_MSG` varchar(100) DEFAULT NULL COMMENT '入库失败时的错误信息',
+  `CREATE_TIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATE_TIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '修改时间',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_AUTH_RECORD_IDX` (`ID_NUMBER`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_BLACK_LIST_FAHAI`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_BLACK_LIST_FAHAI`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_BLACK_LIST_FAHAI` (
+  `ID` decimal(8,0) NOT NULL,
+  `R360_ID` decimal(8,0) DEFAULT NULL COMMENT '融360ID',
+  `TYPE` varchar(10) DEFAULT NULL COMMENT '黑名单类型',
+  `DATE_NOC` datetime DEFAULT NULL COMMENT '日期',
+  `DESCRIP` varchar(1000) DEFAULT NULL COMMENT '详情描述',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  `ENTRY_ID` varchar(512) DEFAULT NULL COMMENT '案件流程ID',
+  `TITLE` varchar(100) DEFAULT NULL COMMENT '标题',
+  `BODY` varchar(1000) DEFAULT NULL COMMENT '正文',
+  `MATCH_RATIO` decimal(10,2) DEFAULT NULL COMMENT '匹配度',
+  `SORT_TIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '立案日期',
+  `SORT_TIME_STRING` varchar(50) DEFAULT NULL COMMENT '立案日期',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_BLACK_LIST_FAHAI_FKI` (`R360_ID`),
+  KEY `DATA_MF_BLACK_LIST_FAHAI_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_BLACK_LIST_FH_AJLC`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_BLACK_LIST_FH_AJLC`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_BLACK_LIST_FH_AJLC` (
+  `ID` decimal(8,0) NOT NULL,
+  `FAHAI_ID` decimal(8,0) NOT NULL COMMENT 'FAHAI_ID',
+  `AJLC_ID` varchar(512) DEFAULT NULL COMMENT '案件流程唯一标识',
+  `SORT_TIME` datetime DEFAULT NULL COMMENT '立案时间',
+  `BODY` varchar(1000) DEFAULT NULL COMMENT '内容',
+  `COURT` varchar(100) DEFAULT NULL COMMENT '法院名称',
+  `PNAME` varchar(100) DEFAULT NULL COMMENT '当事人',
+  `CASE_TYPE` varchar(100) DEFAULT NULL COMMENT '案件类别',
+  `SORT_TIME_STRING` datetime DEFAULT NULL COMMENT '立案时间1',
+  `STATUS` varchar(100) DEFAULT NULL COMMENT '已弃用',
+  `SENTENCING_DATE` datetime DEFAULT NULL COMMENT '审批日期',
+  `CASE_STATUS` varchar(100) DEFAULT NULL COMMENT '案件状态',
+  `AJLC_STATUS` varchar(100) DEFAULT NULL COMMENT '审理状态',
+  `CASE_CAUSE` varchar(200) DEFAULT NULL COMMENT '案由',
+  `CASE_NO` varchar(100) DEFAULT NULL COMMENT '案号',
+  `CYM` varchar(100) DEFAULT NULL COMMENT '查询企业曾用名',
+  `KEY_ID` varchar(512) DEFAULT NULL COMMENT '查看详情接口所需id',
+  `DATA_TYPE` varchar(100) DEFAULT NULL COMMENT '数据类型',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_BLACK_LIST_FH_AJLC_FKI` (`FAHAI_ID`),
+  KEY `DATA_MF_BLACK_LIST_FH_AJLC_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_BLACK_LIST_FH_BGT`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_BLACK_LIST_FH_BGT`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_BLACK_LIST_FH_BGT` (
+  `ID` decimal(8,0) NOT NULL,
+  `FAHAI_ID` decimal(8,0) NOT NULL COMMENT 'FAHAI_ID',
+  `BGT_ID` varchar(512) DEFAULT NULL COMMENT '曝光台唯一标识',
+  `SORT_TIME` datetime DEFAULT NULL COMMENT '立案时间',
+  `BODY` varchar(1000) DEFAULT NULL COMMENT '内容',
+  `DATA_TYPE` varchar(100) DEFAULT NULL COMMENT '数据类型',
+  `SORT_TIME_STRING` datetime DEFAULT NULL COMMENT '立案时间1',
+  `PNAME` varchar(100) DEFAULT NULL COMMENT '当事人',
+  `COURT` varchar(100) DEFAULT NULL COMMENT '法院名称',
+  `PROPOSER` varchar(100) DEFAULT NULL COMMENT '申请人',
+  `CASE_NO` varchar(100) DEFAULT NULL COMMENT '案号',
+  `CYM` varchar(100) DEFAULT NULL COMMENT '查询企业曾用名',
+  `KEYID` varchar(512) DEFAULT NULL,
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_BLACK_LIST_FH_BGT_FKI` (`FAHAI_ID`),
+  KEY `DATA_MF_BLACK_LIST_FH_BGT_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_BLACK_LIST_FH_CPWS`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_BLACK_LIST_FH_CPWS`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_BLACK_LIST_FH_CPWS` (
+  `ID` decimal(8,0) NOT NULL,
+  `FAHAI_ID` decimal(8,0) DEFAULT NULL,
+  `CPWS_ID` varchar(512) DEFAULT NULL,
+  `SORT_TIME` datetime DEFAULT NULL COMMENT '审结时间',
+  `BODY` varchar(1000) DEFAULT NULL COMMENT '内容',
+  `TITLE` varchar(100) DEFAULT NULL COMMENT '标题',
+  `COURT` varchar(100) DEFAULT NULL COMMENT '执行法院名称',
+  `DATA_TYPE` varchar(100) DEFAULT NULL COMMENT '数据类型 cpws',
+  `CASE_TYPE` varchar(100) DEFAULT NULL COMMENT '案件类别',
+  `SORT_TIME_STRING` datetime DEFAULT NULL COMMENT '立案时间',
+  `CASE_NO` varchar(100) DEFAULT NULL COMMENT '案号',
+  `CYM` varchar(100) DEFAULT NULL COMMENT '查询企业曾用名',
+  `KEY_ID` varchar(512) DEFAULT NULL COMMENT '查看详情接口所需id',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_BLACK_LIST_FH_CPWS_FKI` (`FAHAI_ID`),
+  KEY `DATA_MF_BLACK_LIST_FH_CPWS_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_BLACK_LIST_FH_FYGG`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_BLACK_LIST_FH_FYGG`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_BLACK_LIST_FH_FYGG` (
+  `ID` decimal(8,0) NOT NULL,
+  `FAHAI_ID` decimal(8,0) NOT NULL COMMENT 'FAHAI_ID',
+  `FYGG_ID` varchar(512) DEFAULT NULL COMMENT '法院公告唯一标识',
+  `SORT_TIME` datetime DEFAULT NULL COMMENT '发布时间',
+  `BODY` varchar(1000) DEFAULT NULL COMMENT '公告内容',
+  `PNAME` varchar(100) DEFAULT NULL COMMENT '当事人',
+  `COURT` varchar(100) DEFAULT NULL COMMENT '法院名称',
+  `DATA_TYPE` varchar(100) DEFAULT NULL COMMENT '数据类型 fygg',
+  `SORT_TIME_STRING` datetime DEFAULT NULL COMMENT '立案时间',
+  `LAYOUT` varchar(100) DEFAULT NULL COMMENT '版面',
+  `GG_TYPE` varchar(100) DEFAULT NULL COMMENT '公告类型',
+  `CYM` varchar(100) DEFAULT NULL COMMENT '查询企业曾用名',
+  `KEY_ID` varchar(512) DEFAULT NULL COMMENT '查看详情接口所需id',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_BLACK_LIST_FH_FYGG_FKI` (`FAHAI_ID`),
+  KEY `DATA_MF_BLACK_LIST_FH_FYGG_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_BLACK_LIST_FH_KTGG`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_BLACK_LIST_FH_KTGG`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_BLACK_LIST_FH_KTGG` (
+  `ID` decimal(8,0) NOT NULL,
+  `FAHAI_ID` decimal(8,0) NOT NULL COMMENT 'FAHAI_ID',
+  `KTGG_ID` varchar(512) DEFAULT NULL COMMENT '开庭公告唯一的标识',
+  `SORT_TIME` datetime DEFAULT NULL COMMENT '开庭时间',
+  `BODY` varchar(1000) DEFAULT NULL COMMENT '内容',
+  `TITLE` varchar(100) DEFAULT NULL COMMENT '标题',
+  `COURT` varchar(100) DEFAULT NULL COMMENT '法院名称',
+  `DATA_TYPE` varchar(100) DEFAULT NULL COMMENT '数据类型 ktgg',
+  `CASE_CAUSE` varchar(200) DEFAULT NULL COMMENT '案由',
+  `SORT_TIME_STRING` datetime DEFAULT NULL COMMENT '立案时间',
+  `COURT_ROOM` varchar(100) DEFAULT NULL COMMENT '法庭',
+  `PNAME` varchar(100) DEFAULT NULL COMMENT '当事人',
+  `CASE_NO` varchar(100) DEFAULT NULL COMMENT '案号(文书字号)',
+  `CYM` varchar(100) DEFAULT NULL COMMENT '查询企业曾用名',
+  `KEY_ID` varchar(512) DEFAULT NULL COMMENT '查看详情接口所需id',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_BLACK_LIST_FH_KTGG_FKI` (`FAHAI_ID`),
+  KEY `DATA_MF_BLACK_LIST_FH_KTGG_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_BLACK_LIST_FH_SXGG`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_BLACK_LIST_FH_SXGG`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_BLACK_LIST_FH_SXGG` (
+  `ID` decimal(8,0) NOT NULL,
+  `FAHAI_ID` decimal(8,0) NOT NULL,
+  `SXGG_ID` varchar(512) DEFAULT NULL COMMENT '失信公告唯一ID',
+  `SORT_TIME` datetime DEFAULT NULL COMMENT '立案时间',
+  `COURT` varchar(100) DEFAULT NULL COMMENT '执行法院名称',
+  `PNAME` varchar(100) DEFAULT NULL COMMENT '被执行人姓名',
+  `BODY` varchar(1000) DEFAULT NULL COMMENT '内容',
+  `SORT_TIME_STRING` datetime DEFAULT NULL COMMENT '立案时间',
+  `SEX` varchar(5) DEFAULT NULL COMMENT '性别',
+  `LXQK` varchar(100) DEFAULT NULL COMMENT '履行情况',
+  `YJ_CODE` varchar(100) DEFAULT NULL COMMENT '依据文号',
+  `IDCARD_NO` varchar(100) DEFAULT NULL COMMENT '身份证/组织机构代码',
+  `YJDW` varchar(100) DEFAULT NULL COMMENT '做出执行依据单位',
+  `DATA_TYPE` varchar(100) DEFAULT NULL COMMENT '数据类型 sxgg',
+  `JTQX` varchar(100) DEFAULT NULL COMMENT '信被执行人行为具体情形',
+  `YIWU` varchar(500) DEFAULT NULL COMMENT '生效法律文书确定的义务',
+  `AGE` varchar(5) DEFAULT NULL COMMENT '年龄',
+  `PROVINCE` varchar(10) DEFAULT NULL COMMENT '省份',
+  `CASE_NO` varchar(100) DEFAULT NULL COMMENT '案号',
+  `POST_TIME` datetime DEFAULT NULL COMMENT '发布时间',
+  `CYM` varchar(100) DEFAULT NULL COMMENT '查询企业曾用名',
+  `KEY_ID` varchar(512) DEFAULT NULL COMMENT '查看详情接口所需id',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_BLACK_LIST_FH_SXGG_FKI` (`FAHAI_ID`),
+  KEY `DATA_MF_BLACK_LIST_FH_SXGG_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_BLACK_LIST_FH_ZXGG`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_BLACK_LIST_FH_ZXGG`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_BLACK_LIST_FH_ZXGG` (
+  `ID` decimal(8,0) NOT NULL,
+  `FAHAI_ID` decimal(8,0) DEFAULT NULL,
+  `ZXGG_ID` varchar(512) DEFAULT NULL COMMENT '执行公告ID',
+  `SORT_TIME` datetime DEFAULT NULL COMMENT '立案时间',
+  `BODY` varchar(1000) DEFAULT NULL COMMENT '内容',
+  `TITLE` varchar(100) DEFAULT NULL COMMENT '标题',
+  `PNAME` varchar(100) DEFAULT NULL COMMENT '被执行人姓名',
+  `COURT` varchar(100) DEFAULT NULL COMMENT '执行法院名称',
+  `DATA_TYPE` varchar(100) DEFAULT NULL COMMENT '数据类型 zxgg',
+  `SORT_TIME_STRING` datetime DEFAULT NULL COMMENT '立案时间STRING',
+  `STATUS` varchar(100) DEFAULT NULL COMMENT '已弃用',
+  `CASE_NO` varchar(100) DEFAULT NULL COMMENT '案号',
+  `IDCARD_NO` varchar(100) DEFAULT NULL COMMENT '身份证/组织机构代码',
+  `CASE_STATE` varchar(100) DEFAULT NULL COMMENT '案件状态（0：执行中。1：已结案。下同）',
+  `EXEC_MONEY` varchar(100) DEFAULT NULL COMMENT '执行标的',
+  `CYM` varchar(100) DEFAULT NULL COMMENT '查询企业曾用名',
+  `KEY_ID` varchar(512) DEFAULT NULL COMMENT '查看详情接口所需id',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_BLACK_LIST_FH_ZXGG_FKI` (`FAHAI_ID`),
+  KEY `DATA_MF_BLACK_LIST_FH_ZXGG_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_BLACK_LIST_HUIFA`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_BLACK_LIST_HUIFA`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_BLACK_LIST_HUIFA` (
+  `ID` decimal(8,0) NOT NULL,
+  `R360_ID` decimal(8,0) DEFAULT NULL COMMENT '融360ID',
+  `TYPE` varchar(32) DEFAULT NULL COMMENT '黑名单类型',
+  `DATE_NOC` datetime DEFAULT NULL COMMENT '日期',
+  `DESCRIP` varchar(1000) DEFAULT NULL COMMENT '详情描述',
+  `KEYID` varchar(32) DEFAULT NULL COMMENT '唯一ID  originalRet',
+  `TITLE` varchar(100) DEFAULT NULL COMMENT '标题',
+  `DESCRIPTION` varchar(2000) DEFAULT NULL COMMENT '详情描述',
+  `HUIFA_DATE` datetime DEFAULT NULL COMMENT '时间',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_BLACK_LIST_HUIFA_FKI` (`R360_ID`),
+  KEY `DATA_MF_BLACK_LIST_HUIFA_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_BLACK_LIST_ORG_R`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_BLACK_LIST_ORG_R`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_BLACK_LIST_ORG_R` (
+  `ID` decimal(8,0) NOT NULL,
+  `R360_ID` decimal(8,0) DEFAULT NULL COMMENT '融360ID',
+  `FEATURE1` varchar(8) DEFAULT NULL COMMENT '举例：20170801',
+  `FEATURE2` varchar(8) DEFAULT NULL COMMENT '举例：20170802',
+  `FEATURE3` varchar(32) DEFAULT NULL COMMENT '穷举：3/4/5/6',
+  `FEATURE4` varchar(32) DEFAULT NULL COMMENT '穷举：-1/1/2/3/4/5',
+  `FEATURE5` varchar(32) DEFAULT NULL COMMENT '穷举：-1/0/1',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_BLACK_LIST_ORG_R_FKI` (`R360_ID`),
+  KEY `DATA_MF_BLACK_LIST_ORG_R_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_BLACK_LIST_XINYAN`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_BLACK_LIST_XINYAN`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_BLACK_LIST_XINYAN` (
+  `ID` decimal(8,0) NOT NULL COMMENT '主键',
+  `CODE` varchar(64) DEFAULT NULL COMMENT '查询结果码，0：建议拉黑',
+  `DESCRIP` varchar(64) DEFAULT NULL COMMENT '查询结果描述',
+  `TRANS_ID` varchar(64) DEFAULT NULL COMMENT '商户请求订单号',
+  `TRADE_NO` varchar(64) DEFAULT NULL COMMENT '请求响应流水号',
+  `ID_NO` varchar(64) DEFAULT NULL COMMENT '被查询人身份证号',
+  `ID_NAME` varchar(64) DEFAULT NULL COMMENT '被查询人姓名',
+  `VERSIONS` varchar(64) DEFAULT NULL COMMENT '版本号',
+  `MAX_OVERDUE_AMT` varchar(64) DEFAULT NULL COMMENT '最大逾期金额',
+  `MAX_OVERDUE_DAYS` varchar(64) DEFAULT NULL COMMENT '最长逾期天数，区间，格式：dd-dd',
+  `LATEST_OVERDUE_TIME` varchar(64) DEFAULT NULL COMMENT '最近逾期时间，格式：yyyy-MM',
+  `CURRENTLY_OVERDUE` varchar(64) DEFAULT NULL COMMENT '当前逾期机构数',
+  `CURRENTLY_PERFORMANCE` varchar(64) DEFAULT NULL COMMENT '当前履约机构数',
+  `ACC_EXC` varchar(64) DEFAULT NULL COMMENT '异常还款机构数',
+  `ACC_SLEEP` varchar(64) DEFAULT NULL COMMENT '睡眠机构数',
+  `SYSTEM_CODE` varchar(64) DEFAULT NULL COMMENT '系统码',
+  `SOURCE_ID` varchar(64) DEFAULT NULL COMMENT '查询码',
+  `CREATE_TIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATE_TIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='新颜征信负面拉黑';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_BLACK_LIST_YIMEI`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_BLACK_LIST_YIMEI`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_BLACK_LIST_YIMEI` (
+  `ID` decimal(8,0) NOT NULL COMMENT 'ID',
+  `R360_ID` decimal(8,0) DEFAULT NULL COMMENT '融360ID',
+  `TYPE` varchar(32) DEFAULT NULL COMMENT '黑名单类型',
+  `CODE` varchar(3) DEFAULT NULL COMMENT '黑名单CODE',
+  `IS_BLACK` varchar(11) DEFAULT NULL COMMENT '命中黑名单手机号',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_BLACK_LIST_YIMEI_FKI` (`R360_ID`),
+  KEY `DATA_MF_BLACK_LIST_YIMEI_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_EMAIL_REPORT`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_EMAIL_REPORT`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_EMAIL_REPORT` (
+  `ID` decimal(8,0) NOT NULL,
+  `R360_ID` decimal(8,0) DEFAULT NULL,
+  `MAIL` varchar(150) DEFAULT NULL COMMENT '邮箱',
+  `BANK_NAME` varchar(50) DEFAULT NULL COMMENT '银行名',
+  `CARD_NO` varchar(50) DEFAULT NULL COMMENT '卡号后四位',
+  `NAME` varchar(100) DEFAULT NULL COMMENT '卡号后四位',
+  `LAST_BALANCE` decimal(8,0) DEFAULT NULL COMMENT '上期账单,原数值*100',
+  `LAST_PAYMENT` decimal(8,0) DEFAULT NULL COMMENT '上期还款金额,原数值*100',
+  `STATEMENT_START_DATE` datetime DEFAULT NULL COMMENT '账单周期起始日',
+  `STATEMENT_END_DATE` datetime DEFAULT NULL COMMENT '账单周期结束日',
+  `PAYMENT_CUR_DATE` datetime DEFAULT NULL COMMENT '账单日',
+  `PAYMENT_DUE_DATE` datetime DEFAULT NULL COMMENT '账单周期截止日	',
+  `CREDIT_LIMIT` decimal(8,0) DEFAULT NULL COMMENT '信用卡额度	,原数值*100',
+  `TOTAL_POINTS` decimal(8,0) DEFAULT NULL COMMENT '本期账单积分余额',
+  `NEW_BALANCE` decimal(8,0) DEFAULT NULL COMMENT '本期应还金额,	原数值*100',
+  `MIN_PAYMENT` decimal(8,0) DEFAULT NULL COMMENT '本期账单最小还款额	,原数值*100',
+  `IS_CHEAT` decimal(8,0) DEFAULT NULL COMMENT '是否为恶意账单:0正常1转发邮件2是垃圾邮件3是已删除邮件',
+  `DOUBT_COUNT` decimal(8,0) DEFAULT NULL COMMENT '可以消费笔数',
+  `NEW_CHARGES` decimal(8,0) DEFAULT NULL COMMENT '本期账单金额	,原数值*100',
+  `ADJUSTMENT` decimal(8,0) DEFAULT NULL COMMENT '调整金额	,原数值*100',
+  `INTEREST` decimal(8,0) DEFAULT NULL COMMENT '循环利息',
+  `LAST_POINTS` decimal(8,0) DEFAULT NULL COMMENT '上期积分余额',
+  `EARNED_POINTS` decimal(8,0) DEFAULT NULL COMMENT '本期奖励积分',
+  `ADJUSTED_POINTS` decimal(8,0) DEFAULT NULL COMMENT '本期调整积分',
+  `AVAILABLE_BALANCE_USD` decimal(8,0) DEFAULT NULL COMMENT '可用余额(美元)	,原数值*100',
+  `AVAILABLE_BALANCE` decimal(8,0) DEFAULT NULL COMMENT '可用余额	,原数值*100',
+  `CARD_TYPE` decimal(8,0) DEFAULT NULL COMMENT '‘卡类型：1.储蓄卡，2.信用卡	',
+  `CASH_ADVANCE_LIMIT_USD` decimal(8,0) DEFAULT NULL COMMENT '预借现金额度(美元)	,原数值*100',
+  `CREDIT_LIMIT_USD` decimal(8,0) DEFAULT NULL COMMENT '信用额度(美元)	,原数值*100',
+  `CASH_ADVANCE_LIMIT` decimal(8,0) DEFAULT NULL COMMENT '预借现金额度	,原数值*100',
+  `CURRENCY` decimal(8,0) DEFAULT NULL COMMENT 'URRENCY：1、RMB,2、US',
+  `MIN_PAYMENT_USD` decimal(8,0) DEFAULT NULL COMMENT '本期最低还款额（美元）	,原数值*100',
+  `NEW_BALANCE_USD` decimal(8,0) DEFAULT NULL COMMENT '本期应还款金额（美元）	,原数值*100',
+  `REDEEMED_POINTS` decimal(8,0) DEFAULT NULL COMMENT '本期兑换积分	,原数值*100',
+  `REWARDED_POINTS` decimal(8,0) DEFAULT NULL COMMENT '本期奖励积分	,原数值*100',
+  `SEND_TIME_FULL` varchar(100) DEFAULT NULL COMMENT '邮件的发送时间	',
+  `SEND_TIME` decimal(8,0) DEFAULT NULL COMMENT '邮件的发送时间	',
+  `SENDER_EMAIL` varchar(100) DEFAULT NULL COMMENT '发件人的EMAIL	',
+  `SENDER_FULL_NAME` varchar(150) DEFAULT NULL COMMENT '发件人的全称，包含EMAIL',
+  `SEX` decimal(8,0) DEFAULT NULL COMMENT '户主性别：1.先生，2.女士’',
+  `ORIG_MAIL_HEADER` varchar(4000) DEFAULT NULL,
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(20) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `SEARCH_ID` varchar(100) DEFAULT NULL,
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_EMAIL_REPORT_FKI` (`R360_ID`),
+  KEY `DATA_MF_EMAIL_REPORT_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_EMAIL_REPORT_DETL`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_EMAIL_REPORT_DETL`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_EMAIL_REPORT_DETL` (
+  `ID` decimal(8,0) NOT NULL,
+  `EMAIL_ID` decimal(8,0) DEFAULT NULL,
+  `TRANS_DATE` datetime DEFAULT NULL COMMENT '消费时间',
+  `POST_DATE` datetime DEFAULT NULL COMMENT '记账日',
+  `DESCRIPTION` varchar(2000) DEFAULT NULL COMMENT '描述',
+  `RMB_AMOUNT` decimal(8,0) DEFAULT NULL COMMENT '消费金额,原数值*100',
+  `RMB_ORG_AMOUNT` decimal(8,0) DEFAULT NULL COMMENT '保留字段，暂未启用',
+  `CURRENCY` decimal(8,0) DEFAULT NULL COMMENT '币种',
+  `CARD_NO` varchar(32) DEFAULT NULL COMMENT '卡号后四位',
+  `TRANS_AREA` varchar(100) DEFAULT NULL COMMENT '消费地区',
+  `IS_DOUBT` varchar(8) DEFAULT NULL COMMENT '是否可疑账单,1是可疑，0是不可疑',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  `REQUEST_IDCARD` varchar(20) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(20) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `SEARCH_ID` varchar(100) DEFAULT NULL,
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_EMAIL_REPORT_DETL_FKI` (`EMAIL_ID`),
+  KEY `DATA_MF_EMAIL_REPORT_DETL_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_OPR_CREDIT_CARD`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_OPR_CREDIT_CARD`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_OPR_CREDIT_CARD` (
+  `ID` decimal(8,0) NOT NULL,
+  `R360_ID` decimal(8,0) DEFAULT NULL COMMENT '融360ID',
+  `DECISION_SCORE` varchar(255) DEFAULT NULL COMMENT '授信分',
+  `ADVICED_CREDIT` varchar(255) DEFAULT NULL COMMENT '建议授信额度',
+  `VERSION` varchar(255) DEFAULT NULL COMMENT '版本号',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_OPR_CREDIT_CARD_FKI` (`R360_ID`),
+  KEY `DATA_MF_OPR_CREDIT_CARD_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_R360_REPORT`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_R360_REPORT`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_R360_REPORT` (
+  `ID` decimal(8,0) NOT NULL,
+  `R360_ID` decimal(20,0) DEFAULT NULL COMMENT '状态表ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REPORT_TIME` varchar(32) DEFAULT NULL COMMENT '报告生成时间',
+  `USER_TYPE` decimal(2,0) DEFAULT NULL COMMENT '用户类型',
+  `USER_NAME` varchar(50) DEFAULT NULL COMMENT '用户姓名',
+  `ID_CARD_INPUT` varchar(20) DEFAULT NULL COMMENT '身份证号INPUT',
+  `PHONE_INPUT` varchar(32) DEFAULT NULL COMMENT '手机号INPUT',
+  `EMERGENCY_NAME1` varchar(50) DEFAULT NULL COMMENT '紧急联系人1',
+  `EMERGENCY_RELATION1` varchar(32) DEFAULT NULL COMMENT '关系1',
+  `EMERGENCY_PHONE1` varchar(32) DEFAULT NULL COMMENT '联系电话1',
+  `EMERGENCY_NAME2` varchar(50) DEFAULT NULL COMMENT '紧急联系人2',
+  `EMERGENCY_RELATION2` varchar(32) DEFAULT NULL COMMENT '关系2',
+  `EMERGENCY_PHONE2` varchar(32) DEFAULT NULL COMMENT '联系电话2',
+  `PHONE` varchar(32) DEFAULT NULL COMMENT '手机号',
+  `OPERATOR` varchar(32) DEFAULT NULL COMMENT '运营商编码',
+  `OPERATOR_ZH` varchar(32) DEFAULT NULL COMMENT '运营商中文',
+  `PHONE_LOCATION` varchar(256) DEFAULT NULL COMMENT '号码归属地',
+  `ID_CARD_CHECK` decimal(2,0) DEFAULT NULL COMMENT '身份证验证',
+  `NAME_CHECK` decimal(2,0) DEFAULT NULL COMMENT '姓名验证',
+  `ID_CARD` varchar(64) DEFAULT NULL COMMENT '身份证号',
+  `REAL_NAME` varchar(50) DEFAULT NULL COMMENT '真实姓名',
+  `AVE_MONTHLY_CONSUMPTION` decimal(20,2) DEFAULT NULL COMMENT '每月平均消费',
+  `CURRENT_BALANCE` decimal(20,2) DEFAULT NULL COMMENT '当前账户余额',
+  `REG_TIME` varchar(10) DEFAULT NULL COMMENT '注册时间',
+  `IF_CALL_EMERGENCY1` decimal(3,0) DEFAULT NULL COMMENT '是否联系过紧急联系人1',
+  `IF_CALL_EMERGENCY2` decimal(3,0) DEFAULT NULL COMMENT '是否联系过紧急联系人2',
+  `BLACKLIST_CNT` decimal(5,0) DEFAULT NULL COMMENT '黑名单验证',
+  `SEARCHED_CNT` decimal(5,0) DEFAULT NULL COMMENT '被查询次数',
+  `LOAN_RECORD_CNT` decimal(5,0) DEFAULT NULL COMMENT '贷款记录',
+  `CONTACT_DISTRIBUTION_LOCATION` varchar(256) DEFAULT NULL COMMENT '朋友圈分布位置',
+  `CONTACT_DISTRIBUTION_RATIO` decimal(7,2) DEFAULT NULL COMMENT '朋友圈分布率',
+  `ACTIVE_DAYS_TOTAL_DAYS` decimal(5,0) DEFAULT NULL COMMENT '活跃总间隔',
+  `ACTIVE_DAYS_STOP_DAYS` decimal(5,0) DEFAULT NULL COMMENT '非活跃总天数',
+  `ACTIVE_DAYS_STOP_DAYS_DETAIL` varchar(4000) DEFAULT NULL COMMENT '非活跃天数细节',
+  `ACTIVE_DAYS_STOP_3_DAYS` decimal(5,0) DEFAULT NULL COMMENT '连续3天非活跃次数',
+  `ACTIVE_DAYS_STOP_3_DAYS_DETAIL` varchar(4000) DEFAULT NULL COMMENT '连续3天非活跃详情',
+  `BOTH_CALL_CNT` decimal(6,0) DEFAULT NULL COMMENT '互通电话的号码数量',
+  `NIGHT_ACTIVITY_RATIO` decimal(20,2) DEFAULT NULL COMMENT '夜间活动情况',
+  `NIGHT_MSG_RATIO` decimal(20,2) DEFAULT NULL COMMENT '夜间短信情况',
+  `CATE` varchar(20) DEFAULT NULL COMMENT '类别标签',
+  `TALK_SECONDS` decimal(10,0) DEFAULT NULL COMMENT '通话时长',
+  `TALK_CNT` decimal(8,0) DEFAULT NULL COMMENT '通话次数',
+  `CALL_SECONDS` decimal(10,0) DEFAULT NULL COMMENT '主叫时长',
+  `CALL_CNT` decimal(8,0) DEFAULT NULL COMMENT '主叫次数',
+  `CALLED_SECONDS` decimal(10,0) DEFAULT NULL COMMENT '被叫时长',
+  `CALLED_CNT` decimal(8,0) DEFAULT NULL COMMENT '被叫次数',
+  `MSG_CNT` decimal(8,0) DEFAULT NULL COMMENT '短信总数',
+  `SEND_CNT` decimal(8,0) DEFAULT NULL COMMENT '发送短信数',
+  `RECEIVE_CNT` decimal(8,0) DEFAULT NULL COMMENT '接收短信数',
+  `UNKNOWN_CNT` decimal(8,0) DEFAULT NULL COMMENT '未识别状态短信数',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_R360_REPORT_FKI` (`R360_ID`),
+  KEY `DATA_MF_R360_REPORT_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_RISKLIST_BAIDU`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_RISKLIST_BAIDU`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_RISKLIST_BAIDU` (
+  `ID` decimal(8,0) NOT NULL COMMENT '主键',
+  `BLACK_LEVEL` varchar(20) DEFAULT NULL COMMENT '等级值 A/B/C/D，A最严重',
+  `BLACK_REASON` varchar(256) DEFAULT NULL COMMENT '风险名单原因，多个以":"分隔',
+  `BLACK_DETAIL` varchar(2000) DEFAULT NULL COMMENT '针对风险名单原因的说明',
+  `SYSTEM_CODE` varchar(64) DEFAULT NULL COMMENT '调用的系统码',
+  `SOURCE_ID` varchar(64) DEFAULT NULL COMMENT '查询码',
+  `CREATE_TIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATE_TIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_RULE_TASK`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_RULE_TASK`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_RULE_TASK` (
+  `ID` decimal(16,0) NOT NULL COMMENT 'ID',
+  `TRADE_BASE_ID` decimal(16,0) DEFAULT NULL COMMENT '交易基础数据ID',
+  `TRADE_ORDER_ID` varchar(100) DEFAULT NULL COMMENT '交易流水号',
+  `SCENE_TYPE` varchar(50) DEFAULT NULL COMMENT '业务场景',
+  `RULE_NO` varchar(100) DEFAULT NULL COMMENT '规则编码',
+  `RULE_SORT` decimal(16,0) DEFAULT NULL COMMENT '规则排序',
+  `RETRY_COUNT` decimal(16,0) DEFAULT NULL COMMENT '重试次数',
+  `NEXT_TIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '下次重试时间',
+  `MANUAL_COUNT` decimal(16,0) DEFAULT NULL COMMENT '手动重试次数',
+  `TASK_STATUS` varchar(50) DEFAULT NULL COMMENT '任务状态（处理中、异常）',
+  `CREATE_TIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '创建时间',
+  `UPDATE_TIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '修改时间',
+  `DESCRIPTION` varchar(1000) DEFAULT NULL COMMENT '描述',
+  `RESOURCE_ID` varchar(200) DEFAULT NULL COMMENT '内部唯一标识(规则编号_交易基础数据id)',
+  `TASK_TYPE` varchar(50) DEFAULT NULL COMMENT '任务类型',
+  `BUESS_CODE` varchar(50) DEFAULT NULL COMMENT '业务类型',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='第三方数据任务表';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_SERV_QUERY_RECORD`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_SERV_QUERY_RECORD`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_SERV_QUERY_RECORD` (
+  `ID` decimal(8,0) NOT NULL,
+  `PLATFORMCODE` varchar(32) DEFAULT NULL COMMENT '平台编码',
+  `SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  `SERVICECODE` varchar(50) DEFAULT NULL COMMENT '接口编码',
+  `METHOD` varchar(200) DEFAULT NULL COMMENT '调用方法名',
+  `ERRORSCODE` varchar(32) DEFAULT NULL COMMENT '系统异常编码',
+  `ERRORMESSAGE` varchar(500) DEFAULT NULL COMMENT '接口异常消息',
+  `REQUESTVALUE` varchar(1000) DEFAULT NULL COMMENT '请求值',
+  `FILENAME` varchar(50) DEFAULT NULL COMMENT '返回文件名',
+  `FILEPATH` varchar(200) DEFAULT NULL COMMENT '返回文件路径',
+  `STATUS` varchar(1) DEFAULT NULL COMMENT '状态 S 成功 F失败',
+  `FTPSTATUS` varchar(1) DEFAULT NULL COMMENT 'FTP状态 S 成功 F失败',
+  `DBSTATUS` varchar(1) DEFAULT NULL COMMENT '入库状态 S 成功 F失败',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '修改时间',
+  `SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `EXTRA_DATA` varchar(200) DEFAULT NULL COMMENT '冗余信息',
+  `TRADE_ORDER_ID` varchar(200) DEFAULT NULL COMMENT '交易订单号',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_SERV_QUERY_RECORD_IDX` (`SOURCEID`,`SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_SPCL_CALL_MOUTHLY`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_SPCL_CALL_MOUTHLY`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_SPCL_CALL_MOUTHLY` (
+  `ID` decimal(8,0) NOT NULL,
+  `R360_ID` decimal(8,0) DEFAULT NULL COMMENT '融360ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `SEARCH_ID` varchar(50) DEFAULT NULL COMMENT '报告编号',
+  `MONTH` varchar(10) DEFAULT NULL COMMENT '月份',
+  `TALK_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '通话时长',
+  `TALK_CNT` decimal(8,0) DEFAULT NULL COMMENT '通话次数',
+  `CALL_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '主叫时长',
+  `CALL_CNT` decimal(8,0) DEFAULT NULL COMMENT '主叫次数',
+  `CALLED_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '被叫时长',
+  `CALLED_CNT` decimal(8,0) DEFAULT NULL COMMENT '被叫次数',
+  `MSG_CNT` decimal(8,0) DEFAULT NULL COMMENT '短信总数',
+  `SEND_CNT` decimal(8,0) DEFAULT NULL COMMENT '发送短信数',
+  `RECEIVE_CNT` decimal(8,0) DEFAULT NULL COMMENT '接收短信数',
+  `UNKNOWN_CNT` decimal(8,0) DEFAULT NULL COMMENT '未识别状态短信数',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_SPCL_CALL_MOUTHLY_FKI` (`R360_ID`),
+  KEY `DATA_MF_SPCL_CALL_MOUTHLY_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_SPECIAL_SUBNUMBER`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_SPECIAL_SUBNUMBER`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_SPECIAL_SUBNUMBER` (
+  `ID` decimal(8,0) NOT NULL,
+  `R360_ID` decimal(8,0) DEFAULT NULL,
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `SEARCH_ID` varchar(50) DEFAULT NULL,
+  `CATE` varchar(10) DEFAULT NULL,
+  `OTHER_PHONE` varchar(256) DEFAULT NULL,
+  `TALK_SECONDS` decimal(8,0) DEFAULT NULL,
+  `TALK_CNT` decimal(8,0) DEFAULT NULL,
+  `CALL_SECONDS` decimal(8,0) DEFAULT NULL,
+  `CALL_CNT` decimal(8,0) DEFAULT NULL,
+  `CALLED_SECONDS` decimal(8,0) DEFAULT NULL,
+  `CALLED_CNT` decimal(8,0) DEFAULT NULL,
+  `MSG_CNT` decimal(8,0) DEFAULT NULL,
+  `SEND_CNT` decimal(8,0) DEFAULT NULL,
+  `RECEIVE_CNT` decimal(8,0) DEFAULT NULL,
+  `UNKNOWN_CNT` decimal(8,0) DEFAULT NULL,
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_SPECIAL_SUBNUMBER_FKI` (`R360_ID`),
+  KEY `DATA_MF_SPECIAL_SUBNUMBER_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_TJY_RECORD`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_TJY_RECORD`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_TJY_RECORD` (
+  `ID` decimal(8,0) NOT NULL COMMENT '主键',
+  `FILE_PATH` varchar(255) DEFAULT NULL COMMENT '推送文件路径',
+  `FILE_NAME` varchar(255) DEFAULT NULL COMMENT '推送文件名',
+  `APP_NOTIFY_URL` varchar(1023) DEFAULT NULL COMMENT '回调app的地址',
+  `READ_STATE` varchar(15) DEFAULT NULL COMMENT '从FTP服务器读取推送文件的状态，成功 : S, 失败 : F',
+  `CALL_BACK_STATE` varchar(15) DEFAULT NULL COMMENT '运营商回调状态，等待回调中 : waiting，已成功回调 : called',
+  `APP_NOTIFY_STATE` varchar(15) DEFAULT NULL COMMENT '通知app系统的状态，成功S, 失败F',
+  `CREATE_TIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATE_TIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  `ORDER_NO` varchar(31) DEFAULT NULL COMMENT '订单号',
+  `USER_NAME` varchar(31) DEFAULT NULL COMMENT '用户姓名',
+  `PHONE` varchar(31) DEFAULT NULL COMMENT '用户手机号',
+  `ID_NUMBER` varchar(31) DEFAULT NULL COMMENT '用户身份证',
+  `CCEB_SOURCE_ID` varchar(63) DEFAULT NULL COMMENT '信用卡邮箱帐单SOURCE_ID(CCEB = CREDIT CARD EMAIL BILL)',
+  `OACC_SOURCE_ID` varchar(63) DEFAULT NULL COMMENT '分期授信模型SOURCE_ID(OACC = OPERATOR AND CREDIT CARD)',
+  `TOR_SOURCE_ID` varchar(63) DEFAULT NULL COMMENT '运营商报告SOURCE_ID(TELECOM OPERATOR REPORT)',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_TONGDUN`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_TONGDUN`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_TONGDUN` (
+  `ID` decimal(8,0) NOT NULL,
+  `RECORD_ID` decimal(8,0) DEFAULT NULL COMMENT '外键ID',
+  `JINJIAN_ID` varchar(32) DEFAULT NULL COMMENT '进件ID',
+  `ANTIFRAUD_DECISION` varchar(32) DEFAULT NULL COMMENT '反欺诈决定',
+  `ANTIFRAUD_MODEL_SCORE` decimal(8,0) DEFAULT NULL COMMENT '反欺诈模型得分',
+  `FINAL_SCORE` decimal(8,0) DEFAULT NULL COMMENT '最终得分',
+  `FINAL_DECISION` varchar(32) DEFAULT NULL COMMENT '最终决定',
+  `CREDIT_SCORE` varchar(32) DEFAULT NULL COMMENT '信用分',
+  `DECISION` varchar(32) DEFAULT NULL COMMENT '信用决定',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  KEY `DATA_MF_TONGDUN_FKI` (`RECORD_ID`),
+  KEY `DATA_MF_TONGDUN_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_TONGDUN_RISKDETAIL`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_TONGDUN_RISKDETAIL`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_TONGDUN_RISKDETAIL` (
+  `ID` decimal(8,0) NOT NULL,
+  `RISKITEM_ID` decimal(8,0) DEFAULT NULL COMMENT '外键ID',
+  `COUNT` decimal(8,0) DEFAULT NULL COMMENT '分数',
+  `INDUSTRY_DISPLAY_NAME` varchar(64) DEFAULT NULL COMMENT '产业名称',
+  `DIMENSION` varchar(64) DEFAULT NULL COMMENT '维度',
+  `COUNTT` varchar(32) DEFAULT NULL,
+  `DESCRIPTION` varchar(128) DEFAULT NULL COMMENT '描述',
+  `TYPE` varchar(32) DEFAULT NULL COMMENT '类型',
+  `PLATFORM_COUNT` decimal(8,0) DEFAULT NULL COMMENT '平台分',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_TONGDUN_RISKDETAIL_FKI` (`RISKITEM_ID`),
+  KEY `DATA_MF_TONGDUN_RISKDETAIL_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_TONGDUN_RISKITEM`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_TONGDUN_RISKITEM`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_TONGDUN_RISKITEM` (
+  `ID` decimal(8,0) NOT NULL,
+  `TONGDUN_ID` decimal(8,0) DEFAULT NULL COMMENT '外键ID',
+  `RULE_ID` decimal(8,0) DEFAULT NULL COMMENT '规则ID',
+  `SCORE` decimal(8,0) DEFAULT NULL COMMENT '得分',
+  `DECISION` varchar(32) DEFAULT NULL COMMENT '决定',
+  `RISK_NAME` varchar(200) DEFAULT NULL COMMENT '风险名称',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_TONGDUN_RISKITEM_FKI` (`TONGDUN_ID`),
+  KEY `DATA_MF_TONGDUN_RISKITEM_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_TRIP_ANLS_MOUTHLY`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_TRIP_ANLS_MOUTHLY`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_TRIP_ANLS_MOUTHLY` (
+  `ID` decimal(8,0) NOT NULL,
+  `R360_ID` decimal(8,0) DEFAULT NULL COMMENT '融360ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `SEARCH_ID` varchar(50) DEFAULT NULL COMMENT '报告编号',
+  `LOCATION` varchar(50) DEFAULT NULL COMMENT '所在目的地',
+  `MONTH` varchar(10) DEFAULT NULL COMMENT '异地主叫月份',
+  `TALK_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '通话时长',
+  `TALK_CNT` decimal(8,0) DEFAULT NULL COMMENT '通话次数',
+  `CALL_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '主叫时长',
+  `CALL_CNT` decimal(8,0) DEFAULT NULL COMMENT '主叫次数',
+  `CALLED_SECONDS` decimal(8,0) DEFAULT NULL COMMENT '被叫时长',
+  `CALLED_CNT` decimal(8,0) DEFAULT NULL COMMENT '被叫次数',
+  `MSG_CNT` decimal(8,0) DEFAULT NULL COMMENT '短信总数',
+  `SEND_CNT` decimal(8,0) DEFAULT NULL COMMENT '发送短信数',
+  `RECEIVE_CNT` decimal(8,0) DEFAULT NULL COMMENT '接收短信数',
+  `UNKNOWN_CNT` decimal(8,0) DEFAULT NULL COMMENT '未识别状态短信数',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_TRIP_ANLS_MOUTHLY_FKI` (`R360_ID`),
+  KEY `DATA_MF_TRIP_ANLS_MOUTHLY_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_UMENG_SCORE`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_UMENG_SCORE`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_UMENG_SCORE` (
+  `ID` decimal(8,0) NOT NULL,
+  `R360_ID` decimal(8,0) NOT NULL,
+  `REQ_ID` varchar(100) DEFAULT NULL COMMENT '用于唯一标识请求的UUID',
+  `BIZ_ID` varchar(100) DEFAULT NULL COMMENT '业务流水号',
+  `DEVICE_PRICE` varchar(100) DEFAULT NULL COMMENT '设备价格',
+  `CREDIT_SCORE` varchar(100) DEFAULT NULL COMMENT '综合风控评分',
+  `ID_SCORE` varchar(100) DEFAULT NULL COMMENT 'idmmapping 评分',
+  `DEVICE_BRAND` varchar(100) DEFAULT NULL COMMENT '设备品牌',
+  `INTEREST_SCORE` varchar(100) DEFAULT NULL COMMENT '兴趣偏好分',
+  `LOCATION_SCORE` varchar(100) DEFAULT NULL COMMENT '地理分',
+  `DEVICE_RANK` varchar(100) DEFAULT NULL COMMENT '设备质量等级',
+  `DEVICE_OS` varchar(100) DEFAULT NULL COMMENT '操作系统',
+  `DEVICE_SCORE` varchar(100) DEFAULT NULL COMMENT '设备基本信息分',
+  `APP_SCORE` varchar(100) DEFAULT NULL COMMENT 'app评分',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_UMENG_SCORE_FKI` (`R360_ID`),
+  KEY `DATA_MF_UMENG_SCORE_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `DATA_MF_VERIFICATION_ORG_K`
+--
+
+DROP TABLE IF EXISTS `DATA_MF_VERIFICATION_ORG_K`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `DATA_MF_VERIFICATION_ORG_K` (
+  `ID` decimal(8,0) NOT NULL,
+  `R360_ID` decimal(8,0) NOT NULL,
+  `CHECK_STATUS` varchar(2) DEFAULT NULL COMMENT 'CHECK_STATUS',
+  `MESSAGE` varchar(50) DEFAULT NULL COMMENT 'MESSAGE',
+  `PROVINCE` varchar(32) DEFAULT NULL COMMENT 'PROVINCE',
+  `CITY` varchar(32) DEFAULT NULL COMMENT 'CITY',
+  `ISP` varchar(32) DEFAULT NULL COMMENT 'ISP',
+  `CODE` varchar(20) DEFAULT NULL COMMENT 'CODE',
+  `DESCRIP` varchar(50) DEFAULT NULL COMMENT 'DESC',
+  `IFT` varchar(50) DEFAULT NULL COMMENT 'IFT',
+  `ECL` varchar(50) DEFAULT NULL COMMENT 'ECL',
+  `REQUEST_IDCARD` varchar(18) DEFAULT NULL COMMENT '请求信息_身份证',
+  `REQUEST_MOBILE` varchar(11) DEFAULT NULL COMMENT '请求信息_手机号',
+  `REQUEST_NAME` varchar(32) DEFAULT NULL COMMENT '请求信息_姓名',
+  `COMMON_SOURCEID` varchar(32) DEFAULT NULL COMMENT '通用信息_来源ID',
+  `COMMON_SYSTEMCODE` varchar(32) DEFAULT NULL COMMENT '通用信息_系统编号',
+  `CREATETIME` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `UPDATETIME` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
+  PRIMARY KEY (`ID`),
+  KEY `DATA_MF_VERIFICATION_ORG_K_FKI` (`R360_ID`),
+  KEY `DATA_MF_VERIFICATION_ORG_K_IDX` (`COMMON_SOURCEID`,`COMMON_SYSTEMCODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2019-01-03 13:11:32
