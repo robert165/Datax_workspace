@@ -4,10 +4,11 @@ Datax_install_manager_Cron_schedule.sh
 说明:如果更改路径需要修改VOLUMEPATH
 ## 2.执行命令清单,修改orderlist.txt,前面有#不执行
 
-## 3.SQL在json文件中添加
+## 3.修改csv中文件加后缀.csv
 
-csv2mysqltable.sql #所有csv导入mysql的sql语句
-xfdbmysql.sql #mysql数据库结构
+## 4.创建mysql数据库,xfdbmysql.sql #mysql数据库结构
+## 5.参考执行csv2mysqltable.sql #所有csv导入mysql的sql语句
+
 
 
 

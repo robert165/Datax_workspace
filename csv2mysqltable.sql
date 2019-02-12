@@ -1,3 +1,12 @@
+SHOW GLOBAL VARIABLES LIKE '%timeout';
+ SET GLOBAL net_write_timeout=28800;
+ SET GLOBAL net_read_timeout=100;
+ SET GLOBAL connect_timeout=100;
+ SET GLOBAL long_query_time=100;
+ SET GLOBAL max_allowed_packet=5242880;
+
+
+
 SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_VERIFICATION_ORG_K;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_VERIFICATION_ORG_K__a6f52fe6_7d4e_43dc_aebd_c1b22ac17bfd.csv' 
@@ -7,6 +16,7 @@ lines terminated by '\n'
 ignore 1 lines();
 
 
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_UMENG_SCORE;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_UMENG_SCORE__bb332a2d_2f09_4fb0_a12f_8ac529d270bb.csv' 
 into table xfdbmysql.DATA_MF_UMENG_SCORE character set utf8
@@ -15,6 +25,7 @@ lines terminated by '\n'
 ignore 1 lines();
 
 
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_TRIP_ANLS_MOUTHLY;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_TRIP_ANLS_MOUTHLY_201812__b679128b_70f5_4d6c_9989_b8b88af93a25.csv' 
 into table 
@@ -121,7 +132,7 @@ lines terminated by '\n'
 ignore 1 lines();
 
 
-
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_TONGDUN_RISKITEM;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_TONGDUN_RISKITEM__afbcea9d_229f_4fc6_8009_083a358f844a.csv' 
 into table 
@@ -131,6 +142,7 @@ lines terminated by '\n'
 ignore 1 lines();
 
 
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_TONGDUN_RISKDETAIL;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_TONGDUN_RISKDETAIL_201812__d99b6660_b3ab_47f9_96c9_466cd57db905.csv' 
 into table 
@@ -247,6 +259,7 @@ ignore 1 lines();
 
 
 
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_TONGDUN;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_TONGDUN__1ca328b9_b3b0_45a9_b4f5_69c6e53502a4.csv' 
 into table 
@@ -257,6 +270,7 @@ ignore 1 lines();
 
 
 
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_TJY_RECORD;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_TJY_RECORD__9d3f766d_3eea_43cb_b964_fec2c60673de.csv' 
 into table 
@@ -266,6 +280,8 @@ lines terminated by '\n'
 ignore 1 lines();
 
 
+
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_SPECIAL_SUBNUMBER;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_SPECIAL_SUBNUMBER_201812__dafdb4f4_d85b_414b_9b69_bc98579e7ff4.csv' 
 into table 
@@ -381,6 +397,7 @@ ignore 1 lines();
 
 
 
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_SPCL_CALL_MOUTHLY;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_SPCL_CALL_MOUTHLY_201812__19aee54a_b3cd_4ffc_b244_8af19a1866c5.csv' 
 into table 
@@ -495,6 +512,7 @@ ignore 1 lines();
 
 
 
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_SERV_QUERY_RECORD;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_SERV_QUERY_RECORD__b53ed7f9_e757_42a3_b1d7_948d7f670f52.csv' 
 into table 
@@ -505,6 +523,7 @@ ignore 1 lines();
 
 
 
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_RULE_TASK;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_RULE_TASK__ec6531eb_5dee_42b2_8d4e_9bc7d21c3aaf.csv' 
 into table 
@@ -515,6 +534,8 @@ ignore 1 lines();
 
 
 
+
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_RISKLIST_BAIDU;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_RISKLIST_BAIDU__f1a3db77_6ce0_488e_8039_22c7a7553b44.csv' 
 into table 
@@ -524,6 +545,8 @@ lines terminated by '\n'
 ignore 1 lines();
 
 
+
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_R360_REPORT;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_R360_REPORT__a2db6500_9b01_465a_b8ef_6b2a4d8f7f30.csv' 
 into table 
@@ -533,7 +556,7 @@ lines terminated by '\n'
 ignore 1 lines();
 
 
-
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_OPR_CREDIT_CARD;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_OPR_CREDIT_CARD__71db266c_122f_437e_954c_99db98f3a20b.csv' 
 into table 
@@ -543,7 +566,7 @@ lines terminated by '\n'
 ignore 1 lines();
 
 
-
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_EMAIL_REPORT_DETL;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_EMAIL_REPORT_DETL_201811__d4e1cde6_73a6_421e_b3d3_a744bdaeaf39.csv' 
 into table 
@@ -651,6 +674,7 @@ ignore 1 lines();
 
 
 
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_EMAIL_REPORT;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_EMAIL_REPORT_201812__1292acc1_6a5f_4c75_9945_651c6e6ca1ec.csv' 
 into table 
@@ -768,6 +792,7 @@ ignore 1 lines();
 
 
 
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_BLACK_LIST_YIMEI;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_BLACK_LIST_YIMEI__dbc63898_25fa_4caa_83ef_0d412f83dfd0.csv' 
 into table 
@@ -778,6 +803,7 @@ ignore 1 lines();
 
 
 
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_BLACK_LIST_XINYAN;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_BLACK_LIST_XINYAN__f06badba_a2d2_4315_861d_1b54b3845236.csv' 
 into table 
@@ -788,6 +814,7 @@ ignore 1 lines();
 
 
 
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_BLACK_LIST_ORG_R;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_BLACK_LIST_ORG_R__f050d806_0ca7_4d41_a44b_320aacbccef8.csv' 
 into table 
@@ -798,6 +825,7 @@ ignore 1 lines();
 
 
 
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_BLACK_LIST_HUIFA;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_BLACK_LIST_HUIFA__7acaa1c2_78d2_4518_87a0_6a5c90b94128.csv' 
 into table 
@@ -808,6 +836,7 @@ ignore 1 lines();
 
 
 
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_BLACK_LIST_FH_ZXGG;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_BLACK_LIST_FH_ZXGG__9fa7d2a1_b41b_4d64_ad1a_3d68ff276571.csv' 
 into table 
@@ -818,6 +847,7 @@ ignore 1 lines();
 
 
 
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_BLACK_LIST_FH_SXGG;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_BLACK_LIST_FH_SXGG__2ecf1951_caed_4e7f_bf05_01f9f52aecdf.csv' 
 into table 
@@ -828,6 +858,8 @@ ignore 1 lines();
 
 
 
+
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_BLACK_LIST_FH_KTGG;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_BLACK_LIST_FH_KTGG__dbcb4abf_ce0b_461c_b35b_59bf236380ea.csv' 
 into table 
@@ -838,6 +870,8 @@ ignore 1 lines();
 
 
 
+
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_BLACK_LIST_FH_FYGG;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_BLACK_LIST_FH_FYGG__f757f505_ce61_4ff8_84d7_4e806e0552d7.csv' 
 into table 
@@ -848,6 +882,8 @@ ignore 1 lines();
 
 
 
+
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_BLACK_LIST_FH_CPWS;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_BLACK_LIST_FH_CPWS__5148ea8b_e862_4666_91a3_212d67cdc122.csv' 
 into table 
@@ -858,6 +894,8 @@ ignore 1 lines();
 
 
 
+
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_BLACK_LIST_FH_BGT;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_BLACK_LIST_FH_BGT__d39bbc88_f7e9_41fd_b60e_f3320453c972.csv' 
 into table 
@@ -868,6 +906,8 @@ ignore 1 lines();
 
 
 
+
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_BLACK_LIST_FH_AJLC;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_BLACK_LIST_FH_AJLC__82ce0760_cf7d_4ff9_b4f6_28a3f3ccddcc.csv' 
 into table 
@@ -878,6 +918,8 @@ ignore 1 lines();
 
 
 
+
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_BLACK_LIST_FAHAI;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_BLACK_LIST_FAHAI__437705e1_9f7e_4fa7_bd04_ed61a63e090c.csv' 
 into table 
@@ -887,6 +929,9 @@ lines terminated by '\n'
 ignore 1 lines();
 
 
+
+
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_AUTH_RECORD;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_AUTH_RECORD__36885af2_2988_466c_9d99_64ffec5564ab.csv' 
 into table 
@@ -897,6 +942,7 @@ ignore 1 lines();
 
 
 
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_AUTH_RECORD;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_AGENTY_ANTI_FRAUD__36322380_8fe6_41e5_9438_6d82c404de45.csv' 
 into table 
@@ -907,6 +953,8 @@ ignore 1 lines();
 
 
 
+
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_AGENTCE_RISK_INFO;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_AGENTCE_RISK_INFO__93a520b7_0a31_41dd_8b7f_d8846a22416f.csv' 
 into table 
@@ -917,6 +965,8 @@ ignore 1 lines();
 
 
 
+
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_AGENTCE;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_AGENTCE__3691871b_9901_46ba_9e45_98f114497a00.csv' 
 into table 
@@ -927,6 +977,8 @@ ignore 1 lines();
 
 
 
+
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_360_SPECIAL_CALL;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_360_SPECIAL_CALL__fcbe3fd0_8b0d_4b85_87a0_b023345c1c69.csv' 
 into table 
@@ -937,6 +989,8 @@ ignore 1 lines();
 
 
 
+
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_360_SPCL_MONTHLY;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_360_SPCL_MONTHLY_201812__b8b58909_87c3_400f_b289_f586243d0832.csv' 
 into table 
@@ -1054,6 +1108,7 @@ lines terminated by '\n'
 ignore 1 lines();
 
 
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_360_EMRG_ANLS;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_360_EMRG_ANLS__797fcaf7_d03c_4e5c_8cb6_2c0378311e78.csv' 
 into table 
@@ -1064,6 +1119,8 @@ ignore 1 lines();
 
 
 
+
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_360_CALLOG_MOUTHLY;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_360_CALLOG_MOUTHLY_201812__6b622040_3b59_411d_9499_60099242d31d.csv' 
 into table 
@@ -1180,6 +1237,8 @@ ignore 1 lines();
 
 
 
+
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_360_CALL_LOG;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_360_CALL_LOG_201812__eed4b354_47c3_4935_97f0_6e6f23bc971e.csv' 
 into table 
@@ -1297,6 +1356,8 @@ ignore 1 lines();
 
 
 
+
+SET SQL_SAFE_UPDATES = 0;
 delete FROM xfdbmysql.DATA_MF_360_AREA_ANALYSIS;
 load data local infile 'E:/Projects/007_Datacenter/Datax_workspace/csv/DATA_MF_360_AREA_ANALYSIS_201812__2ed51746_3a30_409f_9034_ed590ee67c72.csv' 
 into table 
