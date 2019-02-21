@@ -1,3 +1,5 @@
+# 描述: 利用alibaba/DataX传入远端oracle数据库表数据到csv文件,利用对应数据表结构SQL将csv中数据导入MySQL
+
 环境:docker
 ## 1.启动SQL执行入口
 Datax_install_manager_Cron_schedule.sh
